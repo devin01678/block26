@@ -1,14 +1,11 @@
-import dummyContacts from "./ContactList";
-import { useEffect } from "react";
-import { useState } from "react";
-
 export default function ContactRow({ setSelectedContactId, contact }) {
+  console.log(setSelectedContactId);
+  function handleClick() {
+    console.log(contact, setSelectedContactId);
+    setSelectedContactId(contact);
+  }
   return (
-    <tr
-      onClick={() => {
-        setSelectedContactId(contact.id);
-      }}
-    >
+    <tr onClick={handleClick}>
       <td>{contact.name}</td>
       <td>{contact.email}</td>
       <td>{contact.phone}</td>
